@@ -20,6 +20,45 @@
         "command": "azure-service-bus-explorer.helloWorld",
         "title": "Hello World"
       }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "service-bus-explorer",
+          "title": "Azure Service Bus Explorer",
+          "icon": "resources/activity-bar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "service-bus-explorer": [
+        {
+          "id": "namespaces",
+          "name": "Namespaces"
+        },
+        {
+          "id": "queues",
+          "name": "Queues"
+        },
+        {
+          "id": "topics",
+          "name": "Topics"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "namespaces",
+        "contents": "[Add connection](command:azure-service-bus-explorer.helloWorld)"
+      },
+      {
+        "view": "queues",
+        "contents": "Select a service bus connection"
+      },
+      {
+        "view": "topics",
+        "contents": "Select a service bus connection"
+      }
     ]
   },
   "scripts": {

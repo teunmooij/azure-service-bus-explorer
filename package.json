@@ -11,14 +11,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:azure-service-bus-explorer.helloWorld"
+    "onView:namespaces"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "azure-service-bus-explorer.helloWorld",
-        "title": "Hello World"
+        "command": "azure-service-bus-explorer.addConnection",
+        "title": "Add connection"
+      },
+      {
+        "command": "azure-service-bus-explorer.removeConnection",
+        "title": "Remove connection"
       }
     ],
     "viewsContainers": {
@@ -46,10 +50,25 @@
         }
       ]
     },
+    "menus": {
+      "view/title": [
+        {
+          "command": "azure-service-bus-explorer.addConnection",
+          "when": "view == namespaces",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "azure-service-bus-explorer.removeConnection",
+          "when": "view == namespaces"
+        }
+      ]
+    },
     "viewsWelcome": [
       {
         "view": "namespaces",
-        "contents": "[Add connection](command:azure-service-bus-explorer.helloWorld)"
+        "contents": "[Add connection](command:azure-service-bus-explorer.addConnection)"
       },
       {
         "view": "queues",
